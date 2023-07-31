@@ -70,14 +70,16 @@ export default function TodoItem({ todo }: Props) {
         direction="horizontal"
         className="d-flex align-items-center ms-2"
       >
-        <Button
-          variant="outline-primary"
-          size="sm"
-          onClick={handleSetContentEditable}
-        >
-          {!contentEditable && "Edit"}
-          {contentEditable && "Save"}
-        </Button>
+        {!checked && (
+          <Button
+            variant="outline-primary"
+            size="sm"
+            onClick={handleSetContentEditable}
+          >
+            {!contentEditable && "Edit"}
+            {contentEditable && "Save"}
+          </Button>
+        )}
         <Button variant="outline-danger" size="sm" onClick={handleDelete}>
           Delete
         </Button>
